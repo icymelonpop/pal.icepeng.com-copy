@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>팰월드 계산기 - PalCalc</title>
+        <meta charset="UTF-8"/>
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="팰월드 계산기 - 교배, 도감, 개체값, 아이템"/>
+        <meta name="keywords" content="팰월드, 팔월드, Palworld, 교배, 도감, 개체값, 아이템"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://pal.icepeng.com"/>
+        <meta property="og:title" content="PalCalc"/>
+        <meta property="og:image" content="/favicon.png"/>
+        <meta property="og:description" content="팰월드 계산기 - 교배, 도감, 개체값, 아이템"/>
+        <meta property="og:site_name" content="PalCalc"/>
+        <meta property="og:locale" content="ko_KR"/>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6238355772969385" crossorigin="anonymous"></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DS3JKCP4D"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "G-7DS3JKCP4D");
+        </script>
+        <link rel="preconnect" href="https://www.googletagmanager.com"/>
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"/>
+        <script type="module" crossorigin src="/assets/index-xGh7eNU4.js"></script>
+        <link rel="stylesheet" crossorigin href="/assets/index-FEMU74LP.css">
+    </head>
+    <body>
+        <div id="root">
+            <header class="flex flex-row items-center px-4 py-2 shadow">
+                <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 lg:hidden" aria-label="메뉴 열기" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:Rl:" data-state="closed">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-4 h-4">
+                        <line x1="4" x2="20" y1="12" y2="12"></line>
+                        <line x1="4" x2="20" y1="6" y2="6"></line>
+                        <line x1="4" x2="20" y1="18" y2="18"></line>
+                    </svg>
+                </button>
+                <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 font-semibold" href="/">PalCalc</a>
+                <div class="hidden lg:flex">
+                    <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" href="/combine-target">교배 재료 찾기</a>
+                    <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" href="/combine-simulation">교배 시뮬레이션</a>
+                    <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" href="/combine-path">교배 경로 찾기</a>
+                    <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" href="/combine-path-parent">교배 경로 찾기 (부모)</a>
+                    <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" href="/zukan">도감</a>
+                    <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" href="/individual-value">개체값</a>
+                    <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" href="/items">아이템 드롭</a>
+                </div>
+                <div class="flex-1"></div>
+                <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10" type="button" id="radix-:R2l:" aria-haspopup="menu" aria-expanded="false" data-state="closed">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2"></path>
+                        <path d="M12 20v2"></path>
+                        <path d="m4.93 4.93 1.41 1.41"></path>
+                        <path d="m17.66 17.66 1.41 1.41"></path>
+                        <path d="M2 12h2"></path>
+                        <path d="M20 12h2"></path>
+                        <path d="m6.34 17.66-1.41 1.41"></path>
+                        <path d="m19.07 4.93-1.41 1.41"></path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                    </svg>
+                    <span class="sr-only">Toggle theme</span>
+                </button>
+            </header>
+            <main class="px-8 py-5">
+                <div class="flex flex-col sm:flex-row">
+                    <div class="flex flex-1 flex-col min-h-[600px]">
+                        <h1 class="font-semibold text-lg">개체값 (베타)</h1>
+                        <span class="text-sm text-muted-foreground pb-2">
+                            일부 오차가 존재할 수 있습니다.<br/>패시브 적용 전의 값을 입력해야 합니다.
+                        </span>
+                        <div class="flex gap-4">
+                            <div class="flex flex-col max-w-96 gap-2">
+                                <div class="flex gap-3 items-center">
+                                    <button class="inline-flex items-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 justify-between col-span-3 w-full" role="combobox" aria-expanded="false" type="button" aria-haspopup="dialog" aria-controls="radix-:Rlqp:" data-state="closed">
+                                        팰 선택
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-up-down ml-2 h-4 w-4 shrink-0 opacity-50">
+                                            <path d="m7 15 5 5 5-5"></path>
+                                            <path d="m7 9 5-5 5 5"></path>
+                                        </svg>
+                                    </button>
+                                    <button type="button" aria-pressed="false" data-state="off" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent hover:bg-accent hover:text-accent-foreground data-[state=on]:bg-primary data-[state=on]:text-primary-foreground h-10 px-3 shrink-0">보스</button>
+                                </div>
+                                <div dir="ltr" data-orientation="horizontal">
+                                    <div role="tablist" aria-orientation="horizontal" class="inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground w-full" tabindex="-1" data-orientation="horizontal" style="outline:none">
+                                        <button type="button" role="tab" aria-selected="true" aria-controls="radix-:R9qp:-content-estimate" data-state="active" id="radix-:R9qp:-trigger-estimate" class="inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm flex-1" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">개체값 추정</button>
+                                        <button type="button" role="tab" aria-selected="false" aria-controls="radix-:R9qp:-content-simulate" data-state="inactive" id="radix-:R9qp:-trigger-simulate" class="inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm flex-1" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">성장 스탯 계산</button>
+                                    </div>
+                                    <div data-state="active" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-:R9qp:-trigger-estimate" id="radix-:R9qp:-content-estimate" tabindex="0" class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" style="animation-duration:0s">
+                                        <div class="grid grid-cols-4 items-center justify-items-center gap-2">
+                                            <div class="justify-self-start font-semibold">레벨</div>
+                                            <input type="number" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 col-span-3" placeholder="레벨 입력" value=""/>
+                                            <div class="justify-self-start font-semibold">농축</div>
+                                            <button type="button" role="combobox" aria-controls="radix-:R26pqp:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1 col-span-3">
+                                                <span style="pointer-events:none"></span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                    <path d="m6 9 6 6 6-6"></path>
+                                                </svg>
+                                            </button>
+                                            <select aria-hidden="true" tabindex="-1" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                            <div></div>
+                                            <div class="font-semibold">공격</div>
+                                            <div class="font-semibold">방어</div>
+                                            <div class="font-semibold">체력</div>
+                                            <div class="justify-self-start font-semibold">현재 스탯</div>
+                                            <div>
+                                                <input type="number" class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-20" value=""/>
+                                            </div>
+                                            <div>
+                                                <input type="number" class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-20" value=""/>
+                                            </div>
+                                            <div>
+                                                <input type="number" class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-20" value=""/>
+                                            </div>
+                                            <div class="justify-self-start font-semibold">강화</div>
+                                            <div>
+                                                <button type="button" role="combobox" aria-controls="radix-:R76pqp:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex h-10 items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1 w-20">
+                                                    <span style="pointer-events:none"></span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                        <path d="m6 9 6 6 6-6"></path>
+                                                    </svg>
+                                                </button>
+                                                <select aria-hidden="true" tabindex="-1" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                            </div>
+                                            <div>
+                                                <button type="button" role="combobox" aria-controls="radix-:R7mpqp:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex h-10 items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1 w-20">
+                                                    <span style="pointer-events:none"></span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                        <path d="m6 9 6 6 6-6"></path>
+                                                    </svg>
+                                                </button>
+                                                <select aria-hidden="true" tabindex="-1" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                            </div>
+                                            <div>
+                                                <button type="button" role="combobox" aria-controls="radix-:R86pqp:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex h-10 items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1 w-20">
+                                                    <span style="pointer-events:none"></span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                        <path d="m6 9 6 6 6-6"></path>
+                                                    </svg>
+                                                </button>
+                                                <select aria-hidden="true" tabindex="-1" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                            </div>
+                                        </div>
+                                        <div class="grid grid-cols-4 items-center justify-items-center gap-2 pt-2 mt-4 border-t">
+                                            <div class="justify-self-start font-semibold py-2">추정치</div>
+                                            <div class="py-2">계산불가</div>
+                                            <div class="py-2">계산불가</div>
+                                            <div class="py-2">계산불가</div>
+                                            <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2 col-span-4 w-full">최소값으로 스탯 계산</button>
+                                            <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2 col-span-4 w-full">최대값으로 스탯 계산</button>
+                                        </div>
+                                    </div>
+                                    <div data-state="inactive" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-:R9qp:-trigger-simulate" hidden="" id="radix-:R9qp:-content-simulate" tabindex="0" class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="relative w-full overflow-auto">
+                                    <table class="w-full caption-bottom text-sm max-h-[calc(100vh-12rem)] hidden md:block">
+                                        <thead class="[&amp;_tr]:border-b">
+                                            <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                                                <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">개체값</th>
+                                                <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">공격</th>
+                                                <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">방어</th>
+                                                <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">체력</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="[&amp;_tr:last-child]:border-0"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full h-64 sm:w-80 sm:h-full">
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6238355772969385" data-ad-slot="7965247163" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    </div>
+                </div>
+            </main>
+            <script>
+                window.__staticRouterHydrationData = JSON.parse("{\"loaderData\":{\"0\":null,\"0-5\":null},\"actionData\":null,\"errors\":null}");
+            </script>
+        </div>
+    </body>
+</html>

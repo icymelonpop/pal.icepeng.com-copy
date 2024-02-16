@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>팰월드 계산기 - PalCalc</title>
+        <meta charset="UTF-8"/>
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="팰월드 계산기 - 교배, 도감, 개체값, 아이템"/>
+        <meta name="keywords" content="팰월드, 팔월드, Palworld, 교배, 도감, 개체값, 아이템"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://pal.icepeng.com"/>
+        <meta property="og:title" content="PalCalc"/>
+        <meta property="og:image" content="/favicon.png"/>
+        <meta property="og:description" content="팰월드 계산기 - 교배, 도감, 개체값, 아이템"/>
+        <meta property="og:site_name" content="PalCalc"/>
+        <meta property="og:locale" content="ko_KR"/>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6238355772969385" crossorigin="anonymous"></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DS3JKCP4D"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "G-7DS3JKCP4D");
+        </script>
+        <link rel="preconnect" href="https://www.googletagmanager.com"/>
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"/>
+        <script type="module" crossorigin src="/assets/index-xGh7eNU4.js"></script>
+        <link rel="stylesheet" crossorigin href="/assets/index-FEMU74LP.css">
+    </head>
+    <body>
+        <div id="root">
+            <header class="flex flex-row items-center px-4 py-2 shadow">
+                <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 lg:hidden" aria-label="메뉴 열기" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:Rl:" data-state="closed">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-4 h-4">
+                        <line x1="4" x2="20" y1="12" y2="12"></line>
+                        <line x1="4" x2="20" y1="6" y2="6"></line>
+                        <line x1="4" x2="20" y1="18" y2="18"></line>
+                    </svg>
+                </button>
+                <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 font-semibold" href="/">PalCalc</a>
+                <div class="hidden lg:flex">
+                    <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" href="/combine-target">교배 재료 찾기</a>
+                    <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" href="/combine-simulation">교배 시뮬레이션</a>
+                    <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" href="/combine-path">교배 경로 찾기</a>
+                    <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" href="/combine-path-parent">교배 경로 찾기 (부모)</a>
+                    <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" href="/zukan">도감</a>
+                    <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" href="/individual-value">개체값</a>
+                    <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" href="/items">아이템 드롭</a>
+                </div>
+                <div class="flex-1"></div>
+                <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10" type="button" id="radix-:R2l:" aria-haspopup="menu" aria-expanded="false" data-state="closed">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2"></path>
+                        <path d="M12 20v2"></path>
+                        <path d="m4.93 4.93 1.41 1.41"></path>
+                        <path d="m17.66 17.66 1.41 1.41"></path>
+                        <path d="M2 12h2"></path>
+                        <path d="M20 12h2"></path>
+                        <path d="m6.34 17.66-1.41 1.41"></path>
+                        <path d="m19.07 4.93-1.41 1.41"></path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                    </svg>
+                    <span class="sr-only">Toggle theme</span>
+                </button>
+            </header>
+            <main class="px-8 py-5">
+                <div class="flex flex-col lg:flex-row gap-4 justify-between">
+                    <div class="w-full max-w-5xl">
+                        <h1 class="font-semibold text-lg pb-2">도감 목록</h1>
+                        <div class="grid md:grid-cols-[250px_1fr] lg:grid-cols-[300px_1fr] gap-4 w-full max-w-6xl rounded-xl">
+                            <form method="get" action="/zukan" class="flex flex-col gap-4">
+                                <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+                                    <div class="flex flex-col space-y-1.5 p-6">
+                                        <h3 class="text-2xl font-semibold leading-none tracking-tight">필터</h3>
+                                        <p class="text-sm text-muted-foreground">도감 목록을 아래 조건으로 필터링합니다.</p>
+                                    </div>
+                                    <div class="p-6 pt-0">
+                                        <div class="grid gap-2">
+                                            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-lg" for="search">이름</label>
+                                            <input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="search" name="search" placeholder="팰 이름을 입력하세요"/>
+                                        </div>
+                                        <div class="grid gap-2 mt-4">
+                                            <div class="flex items-center justify-between">
+                                                <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-lg" for="elements">속성</label>
+                                                <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3" type="button">리셋</button>
+                                            </div>
+                                            <button type="button" role="combobox" aria-controls="radix-:R99ip:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1 h-9" name="elements">
+                                                <span style="pointer-events:none"></span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                    <path d="m6 9 6 6 6-6"></path>
+                                                </svg>
+                                            </button>
+                                            <select aria-hidden="true" tabindex="-1" name="elements" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                        </div>
+                                        <div class="grid gap-4 mt-4">
+                                            <div class="flex items-center justify-between">
+                                                <span class="text-lg">작업적성</span>
+                                                <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3" type="button">리셋</button>
+                                            </div>
+                                            <div class="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4">
+                                                <button type="button" role="combobox" aria-controls="radix-:Rppip:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1" name="emitFlame">
+                                                    <span style="pointer-events:none"></span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                        <path d="m6 9 6 6 6-6"></path>
+                                                    </svg>
+                                                </button>
+                                                <select aria-hidden="true" tabindex="-1" name="emitFlame" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                                <button type="button" role="combobox" aria-controls="radix-:R19pip:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1" name="watering">
+                                                    <span style="pointer-events:none"></span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                        <path d="m6 9 6 6 6-6"></path>
+                                                    </svg>
+                                                </button>
+                                                <select aria-hidden="true" tabindex="-1" name="watering" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                                <button type="button" role="combobox" aria-controls="radix-:R1ppip:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1" name="seeding">
+                                                    <span style="pointer-events:none"></span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                        <path d="m6 9 6 6 6-6"></path>
+                                                    </svg>
+                                                </button>
+                                                <select aria-hidden="true" tabindex="-1" name="seeding" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                                <button type="button" role="combobox" aria-controls="radix-:R29pip:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1" name="generateElectricity">
+                                                    <span style="pointer-events:none"></span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                        <path d="m6 9 6 6 6-6"></path>
+                                                    </svg>
+                                                </button>
+                                                <select aria-hidden="true" tabindex="-1" name="generateElectricity" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                                <button type="button" role="combobox" aria-controls="radix-:R2ppip:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1" name="handcraft">
+                                                    <span style="pointer-events:none"></span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                        <path d="m6 9 6 6 6-6"></path>
+                                                    </svg>
+                                                </button>
+                                                <select aria-hidden="true" tabindex="-1" name="handcraft" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                                <button type="button" role="combobox" aria-controls="radix-:R39pip:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1" name="collection">
+                                                    <span style="pointer-events:none"></span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                        <path d="m6 9 6 6 6-6"></path>
+                                                    </svg>
+                                                </button>
+                                                <select aria-hidden="true" tabindex="-1" name="collection" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                                <button type="button" role="combobox" aria-controls="radix-:R3ppip:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1" name="deforest">
+                                                    <span style="pointer-events:none"></span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                        <path d="m6 9 6 6 6-6"></path>
+                                                    </svg>
+                                                </button>
+                                                <select aria-hidden="true" tabindex="-1" name="deforest" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                                <button type="button" role="combobox" aria-controls="radix-:R49pip:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1" name="mining">
+                                                    <span style="pointer-events:none"></span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                        <path d="m6 9 6 6 6-6"></path>
+                                                    </svg>
+                                                </button>
+                                                <select aria-hidden="true" tabindex="-1" name="mining" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                                <button type="button" role="combobox" aria-controls="radix-:R4ppip:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1" name="productMedicine">
+                                                    <span style="pointer-events:none"></span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                        <path d="m6 9 6 6 6-6"></path>
+                                                    </svg>
+                                                </button>
+                                                <select aria-hidden="true" tabindex="-1" name="productMedicine" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                                <button type="button" role="combobox" aria-controls="radix-:R59pip:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1" name="cool">
+                                                    <span style="pointer-events:none"></span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                        <path d="m6 9 6 6 6-6"></path>
+                                                    </svg>
+                                                </button>
+                                                <select aria-hidden="true" tabindex="-1" name="cool" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                                <button type="button" role="combobox" aria-controls="radix-:R5ppip:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1" name="transport">
+                                                    <span style="pointer-events:none"></span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                        <path d="m6 9 6 6 6-6"></path>
+                                                    </svg>
+                                                </button>
+                                                <select aria-hidden="true" tabindex="-1" name="transport" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                                <button type="button" role="combobox" aria-controls="radix-:R69pip:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1" name="monsterFarm">
+                                                    <span style="pointer-events:none"></span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                        <path d="m6 9 6 6 6-6"></path>
+                                                    </svg>
+                                                </button>
+                                                <select aria-hidden="true" tabindex="-1" name="monsterFarm" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                            </div>
+                                        </div>
+                                        <div class="grid gap-4 mt-4">
+                                            <div class="flex items-center justify-between">
+                                                <span class="text-lg">정렬</span>
+                                                <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3" type="button">리셋</button>
+                                            </div>
+                                            <div class="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4">
+                                                <button type="button" role="combobox" aria-controls="radix-:Rq9ip:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1 h-9" name="sortBy">
+                                                    <span style="pointer-events:none"></span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                        <path d="m6 9 6 6 6-6"></path>
+                                                    </svg>
+                                                </button>
+                                                <select aria-hidden="true" tabindex="-1" name="sortBy" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                                <button type="button" role="combobox" aria-controls="radix-:R1a9ip:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="flex w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1 h-9" name="sortOrder">
+                                                    <span style="pointer-events:none"></span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+                                                        <path d="m6 9 6 6 6-6"></path>
+                                                    </svg>
+                                                </button>
+                                                <select aria-hidden="true" tabindex="-1" name="sortOrder" style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="flex flex-col gap-5">
+                                <a href="/zukan/sheepball">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_SheepBall_icon_normal.png" alt="도로롱" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">도로롱</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.001
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1470</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_00.png" alt="무"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">70</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/pinkcat">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_PinkCat_icon_normal.png" alt="까부냥" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">까부냥</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.002
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1460</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_00.png" alt="무"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">70</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/chickenpal">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_ChickenPal_icon_normal.png" alt="꼬꼬닭" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">꼬꼬닭</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.003
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1500</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_00.png" alt="무"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">60</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">60</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">60</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/carbunclo">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_Carbunclo_icon_normal.png" alt="큐룰리스" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">큐룰리스</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.004
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1430</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_04.png" alt="풀"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">75</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">70</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/kitsunebi">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_Kitsunebi_icon_normal.png" alt="파이호" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">파이호</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.005
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1400</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_01.png" alt="화염"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">65</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">75</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">70</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/blueplatypus">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_BluePlatypus_icon_normal.png" alt="청부리" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">청부리</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.006
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1330</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_02.png" alt="물"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">60</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">80</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">60</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/eleccat">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_ElecCat_icon_normal.png" alt="번개냥" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">번개냥</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.007
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1410</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_03.png" alt="전기"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">60</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">75</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">70</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/monkey">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_Monkey_icon_normal.png" alt="몽지" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">몽지</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.008
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1250</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_04.png" alt="풀"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">80</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">70</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/flamebambi">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_FlameBambi_icon_normal.png" alt="불꽃밤비" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">불꽃밤비</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.009
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1155</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_01.png" alt="화염"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">75</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">75</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/penguin">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_Penguin_icon_normal.png" alt="펭키" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">펭키</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.010
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1350</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_02.png" alt="물"/>
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_08.png" alt="얼음"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">75</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">70</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/captainpenguin">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_CaptainPenguin_icon_normal.png" alt="펭킹" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">펭킹</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.011
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        520</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_02.png" alt="물"/>
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_08.png" alt="얼음"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">95</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">95</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">95</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>2
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>2
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>2
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>2
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>2
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/hedgehog">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_Hedgehog_icon_normal.png" alt="찌릿도치" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">찌릿도치</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.012
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1370</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_03.png" alt="전기"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">75</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">70</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/hedgehog_ice">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_Hedgehog_Ice_icon_normal.png" alt="코치도치" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">코치도치</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.012b
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1360</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_08.png" alt="얼음"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">75</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">80</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/plantslime">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_PlantSlime_icon_normal.png" alt="초롱이" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">초롱이</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.013
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1240</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_04.png" alt="풀"/>
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_07.png" alt="대지"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">70</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/cutefox">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_CuteFox_icon_normal.png" alt="미호" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">미호</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.014
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1450</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_00.png" alt="무"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">70</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/wizardowl">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_WizardOwl_icon_normal.png" alt="아테노울" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">아테노울</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.015
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1390</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_05.png" alt="어둠"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">80</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/ganesha">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_Ganesha_icon_normal.png" alt="차코리" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">차코리</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.016
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1490</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_02.png" alt="물"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">60</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">70</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/negativekoala">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_NegativeKoala_icon_normal.png" alt="뚱코알라" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">뚱코알라</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.017
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1380</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_05.png" alt="어둠"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">70</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/woolfox">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_WoolFox_icon_normal.png" alt="밀피" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">밀피</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.018
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1455</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_00.png" alt="무"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">75</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="/zukan/dreamdemon">
+                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-colors duration-200 transform hover:bg-muted">
+                                        <div class="p-6 flex flex-row items-center justify-between space-y-0 py-2 px-3 sm:px-6 pt-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="/assets/PalIcon/T_DreamDemon_icon_normal.png" alt="몽마둥이" class="border w-10 h-10 sm:w-12 sm:h-12 rounded-full"/>
+                                                <div>
+                                                    <p class="text-sm sm:text-base font-medium leading-none sm:leading-none">몽마둥이</p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                        No.019
+                                                        <!-- -->
+                                                        <span class="hidden sm:inline">교배값: 
+                                                        <!-- -->
+                                                        1230</span>
+                                                    </p>
+                                                </div>
+                                                <div class="flex gap-1 items-center">
+                                                    <img class="w-6 h-6" src="/assets/UI/T_Icon_element_s_05.png" alt="어둠"/>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center justify-between ml-4 gap-2">
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">HP</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-red-600 text-white">70</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">ATK</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-600 text-white">75</div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm text-muted-foreground px-1">DEF</p>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 md:w-16 bg-blue-400 text-white">60</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="grid grid-cols-12">
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="불 피우기" src="/assets/UI/T_icon_palwork_00.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="관개" src="/assets/UI/T_icon_palwork_01.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="파종" src="/assets/UI/T_icon_palwork_02.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="발전" src="/assets/UI/T_icon_palwork_03.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="수작업" src="/assets/UI/T_icon_palwork_04.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="채집" src="/assets/UI/T_icon_palwork_05.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="벌목" src="/assets/UI/T_icon_palwork_06.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="채광" src="/assets/UI/T_icon_palwork_07.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="제약" src="/assets/UI/T_icon_palwork_08.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="냉각" src="/assets/UI/T_icon_palwork_10.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm">
+                                                    <img alt="운반" src="/assets/UI/T_icon_palwork_11.png" class="h-8 min-w-8 w-8"/>1
+                                                </div>
+                                                <div class="flex gap-0 items-center flex-col justify-center text-sm grayscale opacity-30">
+                                                    <img alt="목장" src="/assets/UI/T_icon_palwork_12.png" class="h-8 min-w-8 w-8"/>0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <button class="w-full py-2 text-center bg-accent rounded-md text-accent-foreground">더보기</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full min-h-64 lg:w-40 xl:w-80 sm:h-full sticky top-5">
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6238355772969385" data-ad-slot="1789757027" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    </div>
+                </div>
+            </main>
+            <script>
+                window.__staticRouterHydrationData = JSON.parse("{\"loaderData\":{\"0\":null,\"0-6\":null},\"actionData\":null,\"errors\":null}");
+            </script>
+        </div>
+    </body>
+</html>
